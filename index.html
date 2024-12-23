@@ -39,8 +39,8 @@
             border-radius: 5px; /* Rounded corners */
             text-align: center; /* Center text within button */
             text-decoration: none; /* Remove underline from link */
-            margin-top: 15px; /* Space above button */
-            animation: pulse 1.5s infinite; /* Add pulse animation */
+            margin-top: -3px; /* Move button upwards by 3px from bottom edge of image */
+            animation: pulse 1.5s infinite; /* Add pulse animation effect to all buttons */
         }
 
         .see-more-button:hover {
@@ -52,7 +52,7 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.05); /* Slightly enlarge the button */
+                transform: scale(1.05); /* Slightly enlarge the button during animation */
             }
             100% {
                 transform: scale(1);
@@ -106,3 +106,4 @@
 
 </body>
 </html>
+
