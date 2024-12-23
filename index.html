@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Photos</title>
     <style>
+        body {
+            margin: 0; /* Remove default margins */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            background-color: #f0f8ff; /* Light background color */
+            font-family: Arial, sans-serif; /* Set a clean font */
+        }
+
         img {
             width: 100%; /* Full width of the container */
             height: auto; /* Maintain aspect ratio */
@@ -12,7 +21,8 @@
             margin: 0; /* Remove all margins */
             padding: 0; /* Remove all padding */
         }
-         .see-more-button {
+
+        .see-more-button {
             display: inline-block;
             background-color: #008000; /* Green background */
             color: white; /* White text */
@@ -22,40 +32,12 @@
             border-radius: 5px; /* Rounded corners */
             text-align: center; /* Center text within button */
             text-decoration: none; /* Remove underline from link */
-            margin-top: -5px; /* Adjusted to reduce space above button */
+            margin-top: 10px; /* Space above button */
             animation: pulse 1.5s infinite; /* Add pulse animation */
         }
+
         .see-more-button:hover {
             background-color: #005700; /* Darker green on hover */
-        }
-
-        body {
-            margin: 0; /* Remove default margins */
-            height: 100vh; /* Full height of the viewport */
-            display: flex; /* Use flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            background-color: #f0f8ff; /* Light background color */
-            font-family: Arial, sans-serif; /* Set a clean font */
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #28a745; /* Green background */
-            color: white; /* White text */
-            padding: 20px 40px; /* Padding around the text */
-            font-size: 24px; /* Larger font size for emphasis */
-            border: none; /* No border */
-            border-radius: 10px; /* Rounded corners */
-            text-align: center; /* Center text within button */
-            text-decoration: none; /* Remove underline from link */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-            animation: pulse 1.5s infinite; /* Continuous pulse animation */
-        }
-
-        .button:hover {
-            background-color: #218838; /* Darker green on hover */
-            transform: scale(1.1); /* Slightly enlarge the button on hover */
         }
 
         @keyframes pulse {
@@ -73,41 +55,48 @@
 </head>
 <body>
 
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/0276f857032fefb35560f602829daa0c.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-    
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/baf277354f07af92394397d75eb47d7c.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-    
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/small/ebc65daaddd1ef5f511357f6990b010e.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-    
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/small/068cd3c263a28e49402dc07eeb6dfe76.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-    
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/small/ccadec98c4d88ec003fb58a019b5d1db.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-    <p><a href="https://eemmaphotos.short.gy/gallery"><img src="https://jpcdn.it/img/a8bbb3a899f4fc26416c4f8f66dbcf3d.jpg" border="0" alt="i3.jpeg"></a></p>
-
-    <div class="button-container">
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/0276f857032fefb35560f602829daa0c.jpg" alt="i3.jpeg">
+        </a>
         <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
     </div>
 
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/baf277354f07af92394397d75eb47d7c.jpg" alt="i3.jpeg">
+        </a>
+        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    </div>
+
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/small/ebc65daaddd1ef5f511357f6990b010e.jpg" alt="i3.jpeg">
+        </a>
+        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    </div>
+
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/small/068cd3c263a28e49402dc07eeb6dfe76.jpg" alt="i3.jpeg">
+        </a>
+        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    </div>
+
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/small/ccadec98c4d88ec003fb58a019b5d1db.jpg" alt="i3.jpeg">
+        </a>
+        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    </div>
+
+    <div class="photo-container">
+        <a href="https://eemmaphotos.short.gy/gallery">
+            <img src="https://jpcdn.it/img/a8bbb3a899f4fc26416c4f8f66dbcf3d.jpg" alt="i3.jpeg">
+        </a>
+        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    </div>
 
 </body>
 </html>
+
