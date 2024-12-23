@@ -13,6 +13,7 @@
             align-items: center; /* Center vertically */
             background-color: #f0f8ff; /* Light background color */
             font-family: Arial, sans-serif; /* Set a clean font */
+            overflow: hidden; /* Prevent scrolling initially */
         }
 
         .button {
@@ -45,19 +46,42 @@
                 transform: scale(1);
             }
         }
-        .contents{
-            position:relative;
-            top:100000px;
+
+        .contents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Space between button and images */
+        }
+
+        img {
+            width: 100px; /* Set image width to 100px */
+            height: 100px; /* Set image height to 100px */
+            margin-bottom: 10px; /* Space between images */
+        }
+
+        .scrollable {
+            height: calc(100vh - 100px); /* Allow space for button when scrolling */
+            overflow-y: auto; /* Enable vertical scrolling when needed */
         }
     </style>
 </head>
 <body>
 
-    <a href="https://eemmaphotos.short.gy/gallery" class="button">❤️ Everything is here😊</a> <br>
+    <div class="scrollable">
+        <a href="https://eemmaphotos.short.gy/gallery" class="button">❤️ Everything is here😊</a>
+        
+        <div class="contents">
+            <img src="https://jpcdn.it/img/0276f857032fefb35560f602829daa0c.jpg" alt="Image 1">
+            <img src="https://jpcdn.it/img/baf277354f07af92394397d75eb47d7c.jpg" alt="Image 2">
+            <img src="https://jpcdn.it/img/small/ebc65daaddd1ef5f511357f6990b010e.jpg" alt="Image 3">
+            <img src="https://jpcdn.it/img/small/068cd3c263a28e49402dc07eeb6dfe76.jpg" alt="Image 4">
+            <img src="https://jpcdn.it/img/small/ccadec98c4d88ec003fb58a019b5d1db.jpg" alt="Image 5">
+            <img src="https://jpcdn.it/img/a8bbb3a899f4fc26416c4f8f66dbcf3d.jpg" alt="Image 6">
 
-  <p>We always maintain a safe community on facebook,as we respect facebook community guidelines.So,always follow facebook community guidelines</p>
+            <p>We always maintain a safe community on Facebook, as we respect Facebook community guidelines. So, always follow Facebook community guidelines.</p>
+        </div>
     </div>
-   
 
 </body>
 </html>
