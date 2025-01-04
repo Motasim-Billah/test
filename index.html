@@ -3,144 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Video Player</title>
+    <title>Blurred Image Gallery</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f9;
-        }
-        .video-player {
-            position: relative;
-            width: 100%;
-            max-width: 640px;
-            height: 0;
-            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-            background: #000;
-            margin: 20px auto;
-            border: 3px solid #333;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .video-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 0, 0, 0.8);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
         }
-        .play-button:hover {
-            background-color: #ff3333;
+
+        .image-container {
+            position: relative;
+            width: 90%;
+            max-width: 300px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
-        .video-info {
-            font-size: 16px;
-            color: #666;
-            margin-top: 10px;
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: blur(5px); /* Adjust the blur value */
+            transition: filter 0.3s ease-in-out;
         }
-        .loader {
+
+        .image-container:hover img {
+            filter: blur(3px); /* Reduce blur on hover */
+        }
+
+        .view-button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            display: none;
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0.9;
+            transition: opacity 0.3s ease-in-out;
         }
-        .loader::after {
-            content: '';
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .comments {
-            text-align: left;
-            width: 90%;
-            max-width: 640px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .comment {
-            margin-bottom: 10px;
-        }
-        .comment strong {
-            color: #333;
-        }
-        .comment p {
-            margin: 5px 0;
+
+        .view-button:hover {
+            opacity: 1;
+            background-color: #ff784e;
         }
     </style>
-</head>
+</head> 
 <body>
-
-    <h1>Watch Now</h1>
-    <div class="video-player">
-        <!-- Replace with your preview image -->
-        <img src="https://jpcdn.it/img/small/66a07aa0356395a3903f045920477e20.jpg" alt="Video Thumbnail" class="video-thumbnail">
-        <button class="play-button" onclick="startVideo()">▶</button>
-        <div class="loader"></div>
-    </div>
-    <p class="video-info">Viewed 1,234,567 times | Likes: 98%</p>
-
-    <!-- Fake Comments Section -->
-    <div class="comments">
-        <div class="comment">
-            <strong>John Doe:</strong>
-            <p>"This video blew my mind! Can't believe how good it is."</p>
-        </div>
-        <div class="comment">
-            <strong>Jane Smith:</strong>
-            <p>"Loved every second of this. Sharing with all my friends!"</p>
-        </div>
-        <div class="comment">
-            <strong>Mike Johnson:</strong>
-            <p>"I didn't expect this to be so good. Worth every click!"</p>
-        </div>
+    <!-- Image 1 -->
+    <div class="image-container">
+        <img https://jpcdn.it/img/small/66a07aa0356395a3903f045920477e20.jpg" alt="Blurred Image 1">
+        <a href="https://www.profitablecpmrate.com/ekrzy69zh?key=00d12dc404631afc45ef3709ead1b742" class="view-button" target="_blank">View</a>
     </div>
 
-    <script>
-        function startVideo() {
-            const button = document.querySelector('.play-button');
-            const loader = document.querySelector('.loader');
-            
-            // Hide the play button and show the loader
-            button.style.display = 'none';
-            loader.style.display = 'block';
-            
-            // Redirect after a delay
-            setTimeout(() => {
-                window.location.href = "https://www.profitablecpmrate.com/ekrzy69zh?key=00d12dc404631afc45ef3709ead1b742";
-            }, 2000); // 2-second delay
-        }
-    </script>
+    <!-- Image 2 -->
+    <div class="image-container">
+        <img src="your-image2.jpg" alt="Blurred Image 2">
+        <a href="https://www.adsterra.com/direct-link" class="view-button" target="_blank">View</a>
+    </div>
 
+    <!-- Add more images as needed -->
 </body>
 </html>
